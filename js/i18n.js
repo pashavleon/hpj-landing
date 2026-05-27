@@ -17,13 +17,19 @@
     zh: 'zh-CN', ja: 'ja-JP', hi: 'hi-IN',
   };
 
+  var SITE_URL = 'https://pashavleon.github.io/vote/';
+  var OG_IMAGE = SITE_URL + 'assets/arsenal-1280.jpg';
+
   var STRINGS = {
     en: {
-      'page.title': 'UCL Final 2026 — vote',
-      'meta.description': 'Fan poll: who wins the Champions League final in Budapest?',
-      'head.event': 'UCL Final · 30 May · Budapest',
-      'head.question': 'Who lifts the trophy?',
-      'vote.hint': "Tap your team's art — your vote counts instantly",
+      'page.title': 'Arsenal vs PSG — UCL Final 2026 Fan Poll | Live',
+      'meta.description': 'Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal in the Champions League final. Vote now — instant results.',
+      'head.event': 'Champions League Final 2026 · 30 May · Budapest',
+      'head.question': 'Arsenal or PSG — who lifts the trophy?',
+      'head.subtitle': 'Semi-final rematch at Puskás Aréna · holders vs Europe\'s unbeaten UCL run',
+      'vote.hint': 'Tap your team\'s art — your vote shapes the live fan prediction',
+      'img.alt.arsenal': 'Arsenal — fan poll art for UCL Final 2026 vs PSG',
+      'img.alt.psg': 'PSG — fan poll art for Champions League Final 2026 in Budapest',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Vote for Arsenal', 'vote.psgAria': 'Vote for Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -41,11 +47,14 @@
       'msg.sendError': 'Failed to submit. Please try again',
     },
     ru: {
-      'page.title': 'Финал ЛЧ 2026 — голосование',
-      'meta.description': 'Фан-опрос: кто выиграет финал Лиги чемпионов в Будапеште?',
-      'head.event': 'Финал ЛЧ · 30 мая · Будапешт',
-      'head.question': 'Кто поднимет кубок?',
-      'vote.hint': 'Нажми на арт своей команды — голос сразу засчитается',
+      'page.title': 'Арсенал — ПСЖ: голосование за финал ЛЧ 2026',
+      'meta.description': 'Кто выиграет в Будапеште? Живой фан-опрос: действующие чемпионы ПСЖ против непобеждённого Арсенала в Лиге чемпионов. Голосуй — результат онлайн.',
+      'head.event': 'Финал Лиги чемпионов 2026 · 30 мая · Будапешт',
+      'head.question': 'Арсенал или ПСЖ — кто поднимет кубок?',
+      'head.subtitle': 'Реванш полуфинала на «Пушкаш Арене» · чемпионы vs непобедимая серия в ЛЧ',
+      'vote.hint': 'Нажми на арт команды — твой голос влияет на живой фан-прогноз',
+      'img.alt.arsenal': 'Арсенал — арт для голосования в финале ЛЧ 2026 против ПСЖ',
+      'img.alt.psg': 'ПСЖ — арт для голосования в финале Лиги чемпионов в Будапеште',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Голосовать за Arsenal', 'vote.psgAria': 'Голосовать за Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -63,11 +72,14 @@
       'msg.sendError': 'Ошибка при отправке. Попробуйте ещё раз',
     },
     es: {
-      'page.title': 'Final de la UCL 2026 — votación',
-      'meta.description': 'Encuesta: ¿quién gana la final de la Champions en Budapest?',
-      'head.event': 'Final UCL · 30 may · Budapest',
-      'head.question': '¿Quién levanta el trofeo?',
-      'vote.hint': 'Toca el arte de tu equipo — el voto cuenta al instante',
+      'page.title': 'Arsenal vs PSG — encuesta final UCL 2026',
+      'meta.description': '¿Quién gana en Budapest? Encuesta en vivo: PSG campeón defensor vs Arsenal invicto en la Champions. Vota y mira el resultado al instante.',
+      'head.event': 'Final Champions League 2026 · 30 may · Budapest',
+      'head.question': '¿Arsenal o PSG — quién levanta el trofeo?',
+      'head.subtitle': 'Revancha de semifinales en el Puskás · campeones vs racha invicta en Europa',
+      'vote.hint': 'Toca el arte de tu equipo — tu voto forma el pronóstico fan en vivo',
+      'img.alt.arsenal': 'Arsenal — arte para votar en la final UCL 2026 vs PSG',
+      'img.alt.psg': 'PSG — arte para la encuesta de la final de Champions en Budapest',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Votar por Arsenal', 'vote.psgAria': 'Votar por Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -85,11 +97,14 @@
       'msg.sendError': 'Error al enviar. Inténtalo de nuevo',
     },
     de: {
-      'page.title': 'UCL-Finale 2026 — Abstimmung',
-      'meta.description': 'Fan-Umfrage: Wer gewinnt das Champions-League-Finale in Budapest?',
-      'head.event': 'UCL-Finale · 30. Mai · Budapest',
-      'head.question': 'Wer hebt den Pokal?',
-      'vote.hint': 'Tippe auf das Artwork deines Teams — deine Stimme zählt sofort',
+      'page.title': 'Arsenal vs PSG — UCL-Finale 2026 Fan-Umfrage',
+      'meta.description': 'Wer gewinnt in Budapest? Live-Umfrage: Titelverteidiger PSG vs ungeschlagener Arsenal im Champions-League-Finale. Jetzt abstimmen.',
+      'head.event': 'Champions-League-Finale 2026 · 30. Mai · Budapest',
+      'head.question': 'Arsenal oder PSG — wer hebt den Pokal?',
+      'head.subtitle': 'Halbfinal-Revanche in der Puskás Aréna · Titelverteidiger vs ungeschlagene CL-Serie',
+      'vote.hint': 'Tippe auf das Team-Artwork — deine Stimme fließt in die Live-Fan-Prognose ein',
+      'img.alt.arsenal': 'Arsenal — Fan-Art für die UCL-Finale-Umfrage 2026 gegen PSG',
+      'img.alt.psg': 'PSG — Fan-Art für die Champions-League-Finale-Umfrage in Budapest',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Für Arsenal stimmen', 'vote.psgAria': 'Für Paris SG stimmen',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -107,11 +122,14 @@
       'msg.sendError': 'Senden fehlgeschlagen. Bitte erneut versuchen',
     },
     fr: {
-      'page.title': 'Finale LDC 2026 — vote',
-      'meta.description': 'Sondage : qui gagne la finale de la Ligue des champions à Budapest ?',
-      'head.event': 'Finale LDC · 30 mai · Budapest',
-      'head.question': 'Qui soulève le trophée ?',
-      'vote.hint': 'Appuie sur l\'art de ton équipe — ton vote compte tout de suite',
+      'page.title': 'Arsenal vs PSG — sondage finale LDC 2026',
+      'meta.description': 'Qui gagne à Budapest ? Sondage live : PSG tenant du titre vs Arsenal invaincu en Ligue des champions. Vote — résultats instantanés.',
+      'head.event': 'Finale Ligue des champions 2026 · 30 mai · Budapest',
+      'head.question': 'Arsenal ou PSG — qui soulève le trophée ?',
+      'head.subtitle': 'Revanche des demi-finales au Puskás · champions vs série invaincue en Europe',
+      'vote.hint': 'Appuie sur l\'art de ton équipe — ton vote alimente le pronostic fan en direct',
+      'img.alt.arsenal': 'Arsenal — art du sondage fan pour la finale LDC 2026 vs PSG',
+      'img.alt.psg': 'PSG — art du sondage pour la finale de Champions League à Budapest',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Voter pour Arsenal', 'vote.psgAria': 'Voter pour Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -129,11 +147,14 @@
       'msg.sendError': 'Échec de l\'envoi. Réessaie',
     },
     pt: {
-      'page.title': 'Final da UCL 2026 — votação',
-      'meta.description': 'Enquete: quem vence a final da Champions em Budapeste?',
-      'head.event': 'Final da UCL · 30 de maio · Budapeste',
-      'head.question': 'Quem levanta o troféu?',
-      'vote.hint': 'Toque na arte do seu time — o voto vale na hora',
+      'page.title': 'Arsenal vs PSG — votação final UCL 2026',
+      'meta.description': 'Quem vence em Budapeste? Enquete ao vivo: PSG campeão defensor vs Arsenal invicto na Champions. Vote — resultado na hora.',
+      'head.event': 'Final da Champions League 2026 · 30 de maio · Budapeste',
+      'head.question': 'Arsenal ou PSG — quem levanta o troféu?',
+      'head.subtitle': 'Revanche da semifinal na Puskás · campeões vs invencibilidade na Champions',
+      'vote.hint': 'Toque na arte do seu time — seu voto forma o palpite fan ao vivo',
+      'img.alt.arsenal': 'Arsenal — arte da enquete da final UCL 2026 vs PSG',
+      'img.alt.psg': 'PSG — arte da enquete da final da Champions em Budapeste',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Votar no Arsenal', 'vote.psgAria': 'Votar no Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -151,11 +172,14 @@
       'msg.sendError': 'Falha ao enviar. Tente novamente',
     },
     it: {
-      'page.title': 'Finale UCL 2026 — voto',
-      'meta.description': 'Sondaggio: chi vince la finale di Champions a Budapest?',
-      'head.event': 'Finale UCL · 30 maggio · Budapest',
-      'head.question': 'Chi alza il trofeo?',
-      'vote.hint': 'Tocca l\'arte della tua squadra — il voto conta subito',
+      'page.title': 'Arsenal vs PSG — sondaggio finale UCL 2026',
+      'meta.description': 'Chi vince a Budapest? Sondaggio live: PSG campione in carica vs Arsenal imbattuto in Champions. Vota — risultati istantanei.',
+      'head.event': 'Finale Champions League 2026 · 30 maggio · Budapest',
+      'head.question': 'Arsenal o PSG — chi alza il trofeo?',
+      'head.subtitle': 'Rivincita delle semifinali alla Puskás · campioni vs imbattibilità in Europa',
+      'vote.hint': 'Tocca l\'arte della tua squadra — il tuo voto alimenta il pronostico fan live',
+      'img.alt.arsenal': 'Arsenal — arte per il sondaggio finale UCL 2026 vs PSG',
+      'img.alt.psg': 'PSG — arte per il sondaggio della finale Champions a Budapest',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Vota Arsenal', 'vote.psgAria': 'Vota Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -173,11 +197,14 @@
       'msg.sendError': 'Invio non riuscito. Riprova',
     },
     pl: {
-      'page.title': 'Finał LM 2026 — głosowanie',
-      'meta.description': 'Ankieta: kto wygra finał Ligi Mistrzów w Budapeszcie?',
-      'head.event': 'Finał LM · 30 maja · Budapeszt',
-      'head.question': 'Kto podniesie trofeum?',
-      'vote.hint': 'Kliknij grafikę swojej drużyny — głos liczy się od razu',
+      'page.title': 'Arsenal vs PSG — głosowanie finał LM 2026',
+      'meta.description': 'Kto wygra w Budapeszcie? Ankieta na żywo: mistrz PSG vs niepokonany Arsenal w Lidze Mistrzów. Głosuj — wynik od razu.',
+      'head.event': 'Finał Ligi Mistrzów 2026 · 30 maja · Budapeszt',
+      'head.question': 'Arsenal czy PSG — kto podniesie trofeum?',
+      'head.subtitle': 'Rewanż półfinału na Puskás · obrońcy tytułu vs seria bez porażki w LM',
+      'vote.hint': 'Kliknij grafikę drużyny — twój głos buduje live prognozę fanów',
+      'img.alt.arsenal': 'Arsenal — grafika ankiety finału LM 2026 vs PSG',
+      'img.alt.psg': 'PSG — grafika ankiety finału Ligi Mistrzów w Budapeszcie',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Głosuj na Arsenal', 'vote.psgAria': 'Głosuj na Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -195,11 +222,14 @@
       'msg.sendError': 'Błąd wysyłki. Spróbuj ponownie',
     },
     uk: {
-      'page.title': 'Фінал ЛЧ 2026 — голосування',
-      'meta.description': 'Фан-опитування: хто виграє фінал Ліги чемпіонів у Будапешті?',
-      'head.event': 'Фінал ЛЧ · 30 травня · Будапешт',
-      'head.question': 'Хто підніме кубок?',
-      'vote.hint': 'Натисни на арт своєї команди — голос одразу зарахують',
+      'page.title': 'Арсенал — ПСЖ: голосування за фінал ЛЧ 2026',
+      'meta.description': 'Хто виграє в Будапешті? Живе фан-опитування: чемпіони ПСЖ проти непереможного Арсенала в Лізі чемпіонів. Голосуй — результат онлайн.',
+      'head.event': 'Фінал Ліги чемпіонів 2026 · 30 травня · Будапешт',
+      'head.question': 'Арсенал чи ПСЖ — хто підніме кубок?',
+      'head.subtitle': 'Реванш півфіналу на «Пушкаш Арені» · чемпіони vs непереможна серія в ЛЧ',
+      'vote.hint': 'Натисни на арт команди — твій голос формує живий фан-прогноз',
+      'img.alt.arsenal': 'Арсенал — арт для голосування у фіналі ЛЧ 2026 проти ПСЖ',
+      'img.alt.psg': 'ПСЖ — арт для голосування у фіналі Ліги чемпіонів у Будапешті',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Голосувати за Arsenal', 'vote.psgAria': 'Голосувати за Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -217,11 +247,14 @@
       'msg.sendError': 'Помилка надсилання. Спробуйте ще раз',
     },
     tr: {
-      'page.title': 'Şampiyonlar Ligi finali 2026 — oy',
-      'meta.description': 'Anket: Budapeşte\'de Şampiyonlar Ligi finalini kim kazanır?',
-      'head.event': 'Şampiyonlar Ligi finali · 30 Mayıs · Budapeşte',
-      'head.question': 'Kupayı kim kaldıracak?',
-      'vote.hint': 'Takımının görseline dokun — oyun anında sayılır',
+      'page.title': 'Arsenal vs PSG — Şampiyonlar Ligi finali 2026 anketi',
+      'meta.description': 'Budapeşte\'de kim kazanır? Canlı taraftar anketi: şampiyon PSG vs yenilgisiz Arsenal. Oy ver — anında sonuç.',
+      'head.event': 'Şampiyonlar Ligi finali 2026 · 30 Mayıs · Budapeşte',
+      'head.question': 'Arsenal mi PSG mi — kupayı kim kaldıracak?',
+      'head.subtitle': 'Yarı final rövanşı Puskás\'ta · şampiyonlar vs Avrupa\'da yenilgisiz seri',
+      'vote.hint': 'Takımının görseline dokun — oyun canlı fan tahminini şekillendirir',
+      'img.alt.arsenal': 'Arsenal — PSG\'ye karşı 2026 Şampiyonlar Ligi finali anket görseli',
+      'img.alt.psg': 'PSG — Budapeşte Şampiyonlar Ligi finali anket görseli',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Arsenal\'e oy ver', 'vote.psgAria': 'Paris SG\'ye oy ver',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -239,11 +272,14 @@
       'msg.sendError': 'Gönderilemedi. Lütfen tekrar deneyin',
     },
     zh: {
-      'page.title': '2026欧冠决赛 — 投票',
-      'meta.description': '球迷投票：谁将赢得布达佩斯欧冠决赛？',
-      'head.event': '欧冠决赛 · 5月30日 · 布达佩斯',
-      'head.question': '谁将举起奖杯？',
-      'vote.hint': '点击你支持球队的作品 — 立即计票',
+      'page.title': '阿森纳 vs 巴黎圣日耳曼 — 2026欧冠决赛球迷投票',
+      'meta.description': '布达佩斯谁夺冠？实时球迷投票：卫冕冠军巴黎 vs 欧冠不败阿森纳。立即投票，即时看结果。',
+      'head.event': '2026欧冠决赛 · 5月30日 · 布达佩斯普斯卡什球场',
+      'head.question': '阿森纳还是巴黎 — 谁将举起奖杯？',
+      'head.subtitle': '半决赛重演 · 卫冕冠军 vs 欧冠全胜纪录',
+      'vote.hint': '点击你支持球队的作品 — 你的投票塑造实时球迷预测',
+      'img.alt.arsenal': '阿森纳 — 2026欧冠决赛对阵巴黎的球迷投票图',
+      'img.alt.psg': '巴黎圣日耳曼 — 布达佩斯欧冠决赛球迷投票图',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': '投票支持 Arsenal', 'vote.psgAria': '投票支持 Paris SG',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -261,11 +297,14 @@
       'msg.sendError': '提交失败，请重试',
     },
     ja: {
-      'page.title': 'UCL決勝 2026 — 投票',
-      'meta.description': 'ファン投票：ブダペストのチャンピオンズリーグ決勝はどちらが勝つ？',
-      'head.event': 'UCL決勝 · 5月30日 · ブダペスト',
-      'head.question': '誰がトロフィーを掲げる？',
-      'vote.hint': '応援チームのアートをタップ — すぐに投票が反映',
+      'page.title': 'アーセナル vs PSG — UCL決勝2026ファン投票',
+      'meta.description': 'ブダペストで誰が勝つ？ライブ投票：王者PSG vs CL無敗のアーセナル。今すぐ投票 — 結果は即時反映。',
+      'head.event': '2026 UEFAチャンピオンズリーグ決勝 · 5月30日 · ブダペスト',
+      'head.question': 'アーセナルかPSGか — 誰がトロフィーを掲げる？',
+      'head.subtitle': '準決勝の再戦 · プシュカシュ・アレーナ · 王者 vs 欧州無敗',
+      'vote.hint': 'チームのアートをタップ — あなたの一票がライブファン予想に反映',
+      'img.alt.arsenal': 'アーセナル — UCL決勝2026対PSGのファン投票アート',
+      'img.alt.psg': 'PSG — ブダペストUCL決勝ファン投票アート',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Arsenal に投票', 'vote.psgAria': 'Paris SG に投票',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -283,11 +322,14 @@
       'msg.sendError': '送信に失敗しました。もう一度お試しください',
     },
     hi: {
-      'page.title': 'UCL फाइनल 2026 — वोट',
-      'meta.description': 'फैन पोल: बुडापेस्ट में चैंपियंस लीग फाइनल कौन जीतेगा?',
-      'head.event': 'UCL फाइनल · 30 मई · बुडापेस्ट',
-      'head.question': 'ट्रॉफी कौन उठाएगा?',
-      'vote.hint': 'अपनी टीम की आर्ट पर टैप करें — वोट तुरंत गिना जाएगा',
+      'page.title': 'Arsenal vs PSG — UCL फाइनल 2026 फैन वोट',
+      'meta.description': 'बुडापेस्ट में कौन जीतेगा? लाइव फैन पोल: चैंपियन PSG बनाम अपराजित Arsenal। अभी वोट करें — तुरंत परिणाम।',
+      'head.event': 'चैंपियंस लीग फाइनल 2026 · 30 मई · बुडापेस्ट',
+      'head.question': 'Arsenal या PSG — ट्रॉफी कौन उठाएगा?',
+      'head.subtitle': 'सेमीफाइनल रीमैच · पुस्कास अखाड़ा · चैंपियन बनाम यूरोप में अपराजित',
+      'vote.hint': 'अपनी टीम की आर्ट पर टैप करें — आपका वोट लाइव फैन प्रेडिक्शन बनाता है',
+      'img.alt.arsenal': 'Arsenal — PSG के खिलाफ UCL फाइनल 2026 फैन पोल आर्ट',
+      'img.alt.psg': 'PSG — बुडापेस्ट चैंपियंस लीग फाइनल फैन पोल आर्ट',
       'team.arsenal': 'Arsenal', 'team.psg': 'Paris SG',
       'vote.arsenalAria': 'Arsenal को वोट दें', 'vote.psgAria': 'Paris SG को वोट दें',
       'stats.arsenal': 'Arsenal {pct}%', 'stats.psg': 'PSG {pct}%',
@@ -356,11 +398,59 @@
     });
   }
 
+  function setMetaContent(selector, value) {
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute('content', value);
+  }
+
+  function applyStructuredData() {
+    var el = document.getElementById('json-ld');
+    if (!el) return;
+    var title = t('page.title');
+    var desc = t('meta.description');
+    el.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: title,
+      description: desc,
+      url: SITE_URL,
+      inLanguage: currentLocale,
+      about: {
+        '@type': 'SportsEvent',
+        name: 'UEFA Champions League Final 2026',
+        startDate: '2026-05-30T18:00:00+02:00',
+        location: {
+          '@type': 'Place',
+          name: 'Puskás Aréna',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Budapest',
+            addressCountry: 'HU',
+          },
+        },
+        competitor: [
+          { '@type': 'SportsTeam', name: 'Arsenal FC' },
+          { '@type': 'SportsTeam', name: 'Paris Saint-Germain' },
+        ],
+      },
+    });
+  }
+
+  function applyMeta() {
+    var title = t('page.title');
+    var desc = t('meta.description');
+    document.title = title;
+    setMetaContent('meta[name="description"]', desc);
+    setMetaContent('meta[property="og:title"]', title);
+    setMetaContent('meta[property="og:description"]', desc);
+    setMetaContent('meta[name="twitter:title"]', title);
+    setMetaContent('meta[name="twitter:description"]', desc);
+    applyStructuredData();
+  }
+
   function apply(root) {
     root = root || document;
-    var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', t('meta.description'));
-    document.title = t('page.title');
+    applyMeta();
     document.documentElement.lang = currentLocale;
 
     root.querySelectorAll('[data-i18n]').forEach(function (el) {

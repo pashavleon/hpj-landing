@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Финал ЛЧ 2026 — голосование</title>
-  <meta name="description" content="Fan poll: кто выиграет финал Лиги чемпионов в Будапеште?" />
+  <title>Arsenal vs PSG — UCL Final 2026 Fan Poll | Live</title>
+  <meta name="description" content="Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal in the Champions League final. Vote now — instant results." />
+  <meta name="keywords" content="Arsenal vs PSG, PSG vs Arsenal, Champions League final 2026, UCL final, Budapest, Puskás Aréna, fan poll, prediction, semi-final rematch" />
+  <link rel="canonical" href="https://pashavleon.github.io/vote/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="UCL Fan Poll" />
+  <meta property="og:title" content="Arsenal vs PSG — UCL Final 2026 Fan Poll | Live" />
+  <meta property="og:description" content="Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal. Vote now — instant results." />
+  <meta property="og:url" content="https://pashavleon.github.io/vote/" />
+  <meta property="og:image" content="https://pashavleon.github.io/vote/assets/arsenal-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="853" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arsenal vs PSG — UCL Final 2026 Fan Poll | Live" />
+  <meta name="twitter:description" content="Who wins in Budapest? Live fan poll: PSG vs unbeaten Arsenal. Vote now." />
+  <meta name="twitter:image" content="https://pashavleon.github.io/vote/assets/arsenal-1280.jpg" />
+  <script type="application/ld+json" id="json-ld"></script>
   <link rel="preload" as="image" href="assets/arsenal-800.jpg" media="(max-width: 839px)" />
   <link rel="preload" as="image" href="assets/arsenal-1280.jpg" media="(min-width: 840px)" />
   <style>
@@ -261,13 +276,27 @@
       text-align: center;
       padding: 1.25rem 1rem 0.35rem;
     }
-    .head h4 {
+    .head__event {
       font-size: 0.7rem;
       letter-spacing: 0.15em;
       color: var(--gold);
       text-transform: uppercase;
     }
-    .head p { font-size: 1.15rem; font-weight: 700; margin-top: 0.25rem; }
+    .head__title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+      line-height: 1.25;
+    }
+    .head__subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.45;
+      max-width: 22rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .vote-hint {
       text-align: center;
       font-size: 0.8rem;
@@ -448,8 +477,9 @@
       <div class="lang-bar__buttons" id="lang-buttons"></div>
     </nav>
     <header class="head">
-      <h4 data-i18n="head.event">UCL Final · 30 May · Budapest</h4>
-      <p data-i18n="head.question">Who lifts the trophy?</p>
+      <p class="head__event" data-i18n="head.event">Champions League Final 2026 · 30 May · Budapest</p>
+      <h1 class="head__title" data-i18n="head.question">Arsenal or PSG — who lifts the trophy?</h1>
+      <p class="head__subtitle" data-i18n="head.subtitle">Semi-final rematch at Puskás Aréna · holders vs Europe's unbeaten UCL run</p>
     </header>
     <p class="vote-hint" data-i18n="vote.hint">Tap your team's art — your vote counts instantly</p>
 
@@ -463,7 +493,9 @@
             src="assets/arsenal-1280.jpg"
             srcset="assets/arsenal-800.jpg 800w, assets/arsenal-1280.jpg 1280w"
             sizes="(max-width: 839px) 100vw, 50vw"
-            alt=""
+            data-i18n="img.alt.arsenal"
+            data-i18n-attr="alt"
+            alt="Arsenal — fan poll art for UCL Final 2026 vs PSG"
             width="1280"
             height="853"
             decoding="async"
@@ -486,7 +518,9 @@
             src="assets/psg-1280.jpg"
             srcset="assets/psg-800.jpg 800w, assets/psg-1280.jpg 1280w"
             sizes="(max-width: 839px) 100vw, 50vw"
-            alt=""
+            data-i18n="img.alt.psg"
+            data-i18n-attr="alt"
+            alt="PSG — fan poll art for Champions League Final 2026 in Budapest"
             width="1280"
             height="853"
             decoding="async"
