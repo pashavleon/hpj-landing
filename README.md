@@ -2,7 +2,7 @@
 
 Статичный лэндинг с голосованием (GitHub Pages + Supabase).
 
-- **Сайт:** https://pashavleon.github.io/hpj-landing/
+- **Сайт:** https://pashavleon.github.io/vote/
 - **Настройка Supabase:** см. [README-SUPABASE.md](README-SUPABASE.md)
 
 ## Структура
