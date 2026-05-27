@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" id="doc-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -353,6 +353,49 @@
       color: #4a5568;
       padding: 0 1rem 2rem;
     }
+    .lang-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      padding: 0.5rem 0.75rem 0;
+      max-width: 100%;
+    }
+    .lang-bar__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem;
+      max-width: 100%;
+    }
+    .lang-bar__label {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-right: 0.25rem;
+    }
+    .lang-bar button {
+      font: inherit;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #2a3548;
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .lang-bar button.is-active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(212, 168, 83, 0.12);
+    }
+    .lang-bar button:hover:not(.is-active) {
+      border-color: #4a5568;
+      color: var(--text);
+    }
 
     @media (min-width: 840px) {
       .page { max-width: min(1200px, 96vw); }
@@ -400,17 +443,21 @@
 </head>
 <body>
   <div class="page landing-a" data-vote-root data-vote-poll-id="ucl-final-2026">
+    <nav class="lang-bar" aria-label="Language">
+      <span class="lang-bar__label" data-i18n="lang.label">Language</span>
+      <div class="lang-bar__buttons" id="lang-buttons"></div>
+    </nav>
     <header class="head">
-      <h4>Финал ЛЧ · 30 мая · Будапешт</h4>
-      <p>Кто поднимет кубок?</p>
+      <h4 data-i18n="head.event">UCL Final · 30 May · Budapest</h4>
+      <p data-i18n="head.question">Who lifts the trophy?</p>
     </header>
-    <p class="vote-hint">Нажми на арт своей команды — голос сразу засчитается</p>
+    <p class="vote-hint" data-i18n="vote.hint">Tap your team's art — your vote counts instantly</p>
 
     <div class="hero-stack">
       <button type="button" class="hero-art hero-art--arsenal" data-vote-choice="arsenal"
-        aria-label="Голосовать за Arsenal" aria-pressed="false">
+        data-i18n="vote.arsenalAria" data-i18n-attr="aria-label" aria-pressed="false">
         <span class="hero-art__frame">
-          <span class="side-label arsenal">Arsenal</span>
+          <span class="side-label arsenal" data-i18n="team.arsenal">Arsenal</span>
           <img
             class="img-full"
             src="assets/arsenal-1280.jpg"
@@ -431,9 +478,9 @@
       <div class="vs-row" aria-hidden="true"><span class="vs-badge">VS</span></div>
 
       <button type="button" class="hero-art hero-art--psg" data-vote-choice="psg"
-        aria-label="Голосовать за Paris SG" aria-pressed="false">
+        data-i18n="vote.psgAria" data-i18n-attr="aria-label" aria-pressed="false">
         <span class="hero-art__frame">
-          <span class="side-label psg">Paris SG</span>
+          <span class="side-label psg" data-i18n="team.psg">Paris SG</span>
           <img
             class="img-full"
             src="assets/psg-1280.jpg"
@@ -460,10 +507,11 @@
     <p class="vote-total" data-vote-total>… голосов · обновляется live</p>
     <p class="vote-message" data-vote-message hidden></p>
 
-    <p class="footer">Неофициальный фан-опрос · не связан с УЕФА</p>
+    <p class="footer" data-i18n="footer.disclaimer">Unofficial fan poll · not affiliated with UEFA</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/config.js"></script>
   <script src="js/vote.js"></script>
 </body>

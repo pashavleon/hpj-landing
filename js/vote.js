@@ -45,7 +45,12 @@
   }
 
   function formatCount(n) {
-    return Number(n).toLocaleString('ru-RU');
+    if (window.I18n && window.I18n.formatNumber) return window.I18n.formatNumber(n);
+    return Number(n).toLocaleString('en-US');
+  }
+
+  function msg(key) {
+    return window.I18n ? window.I18n.t(key) : key;
   }
 
   function createClient(cfg) {
@@ -85,6 +90,7 @@
     this.client = null;
     this.demo = !isConfigured(this.cfg);
     this.refreshTimer = null;
+    this.lastStats = null;
 
     this.barFill = root.querySelector('[data-vote-bar-fill]');
     this.statArsenal = root.querySelector('[data-vote-stat-arsenal]');
@@ -99,11 +105,13 @@
         this.client = createClient(this.cfg);
       } catch (e) {
         this.demo = true;
-        this.showMessage('Supabase SDK не загружен — демо-режим', 'warn');
+        this.showMessage('msg.demoNoSdk', 'warn');
       }
     }
 
     this.bind();
+    this.bindLocale();
+    this.updateVoteLabels();
     this.applyStoredChoice();
     this.refresh();
     if (!this.demo) {
@@ -112,9 +120,26 @@
         self.refresh();
       }, this.cfg.refreshIntervalMs);
     } else {
-      this.showMessage('Демо: укажите URL и anon key в js/config.js', 'warn');
+      this.showMessage('msg.demoConfig', 'warn');
     }
   }
+
+  ClVoteWidget.prototype.bindLocale = function () {
+    var self = this;
+    document.addEventListener('ucl-locale-change', function () {
+      self.updateVoteLabels();
+      if (self.lastStats) self.renderStats(self.lastStats);
+    });
+  };
+
+  ClVoteWidget.prototype.updateVoteLabels = function () {
+    if (!window.I18n) return;
+    this.buttons.forEach(function (el) {
+      var choice = el.getAttribute('data-vote-choice');
+      if (choice === 'arsenal') el.setAttribute('aria-label', msg('vote.arsenalAria'));
+      if (choice === 'psg') el.setAttribute('aria-label', msg('vote.psgAria'));
+    });
+  };
 
   ClVoteWidget.prototype.bind = function () {
     var self = this;
@@ -179,27 +204,30 @@
     el.classList.add('is-animating-vote');
   };
 
-  ClVoteWidget.prototype.showMessage = function (text, type) {
+  ClVoteWidget.prototype.showMessage = function (key, type) {
     if (!this.messageEl) return;
-    this.messageEl.textContent = text;
-    this.messageEl.hidden = !text;
+    this.messageEl.textContent = msg(key);
+    this.messageEl.hidden = !key;
     this.messageEl.className = 'vote-message' + (type ? ' vote-message--' + type : '');
   };
 
   ClVoteWidget.prototype.renderStats = function (stats) {
+    this.lastStats = stats;
     var aPct = stats.arsenal.pct;
     var pPct = stats.psg.pct;
     if (this.barFill) {
       this.barFill.style.width = stats.total ? aPct + '%' : '50%';
     }
     if (this.statArsenal) {
-      this.statArsenal.textContent = 'Arsenal ' + aPct + '%';
+      this.statArsenal.textContent = msg('stats.arsenal', { pct: aPct });
     }
     if (this.statPsg) {
-      this.statPsg.textContent = 'PSG ' + pPct + '%';
+      this.statPsg.textContent = msg('stats.psg', { pct: pPct });
     }
     if (this.totalEl) {
-      this.totalEl.textContent = formatCount(stats.total) + ' голосов · обновляется live';
+      this.totalEl.textContent = stats.total
+        ? msg('vote.totalLive', { count: formatCount(stats.total) })
+        : msg('vote.totalLiveEmpty');
     }
     this.pctEls.forEach(function (el) {
       var forChoice = el.getAttribute('data-vote-pct');
@@ -222,7 +250,7 @@
       })
       .catch(function (err) {
         console.error('[vote] refresh failed', err);
-        self.showMessage('Не удалось загрузить статистику', 'error');
+        self.showMessage('msg.statsError', 'error');
       });
   };
 
@@ -231,21 +259,21 @@
 
     var existing = getStoredChoice(this.pollId);
     if (existing) {
-      this.showMessage('Вы уже голосовали', 'info');
+      this.showMessage('msg.alreadyVoted', 'info');
       return;
     }
 
     var self = this;
     this.setButtonsDisabled(true);
     this.playVoteAnimation(choice);
-    this.showMessage('Отправляем голос…', 'info');
+    this.showMessage('msg.sending', 'info');
 
     if (this.demo) {
       demoAddVote(this.pollId, choice);
       setStoredChoice(this.pollId, choice);
       this.highlightChoice(choice);
       this.renderStats(demoStats(this.pollId));
-      this.showMessage('Демо-голос учтён локально', 'success');
+      this.showMessage('msg.demoVote', 'success');
       return;
     }
 
@@ -262,20 +290,20 @@
           if (res.error.code === '23505') {
             setStoredChoice(self.pollId, choice);
             self.highlightChoice(choice);
-            self.showMessage('Вы уже голосовали', 'info');
+            self.showMessage('msg.alreadyVoted', 'info');
             return self.refresh();
           }
           throw res.error;
         }
         setStoredChoice(self.pollId, choice);
         self.highlightChoice(choice);
-        self.showMessage('Спасибо! Ваш голос учтён', 'success');
+        self.showMessage('msg.thanks', 'success');
         return self.refresh();
       })
       .catch(function (err) {
         console.error('[vote] cast failed', err);
         self.setButtonsDisabled(false);
-        self.showMessage('Ошибка при отправке. Попробуйте ещё раз', 'error');
+        self.showMessage('msg.sendError', 'error');
       });
   };
 
@@ -313,9 +341,14 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
+  function boot() {
+    if (window.I18n && window.I18n.init) window.I18n.init();
     init();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
   }
 })();
