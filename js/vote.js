@@ -167,6 +167,9 @@
   ClVoteWidget.prototype.highlightChoice = function (choice) {
     this.root.classList.add('has-voted');
     this.root.setAttribute('data-user-choice', choice);
+    document.dispatchEvent(
+      new CustomEvent('ucl-vote-cast', { detail: { choice: choice, pollId: this.pollId } })
+    );
     this.buttons.forEach(function (el) {
       var c = el.getAttribute('data-vote-choice');
       var isPick = c === choice;
