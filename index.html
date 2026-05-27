@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Финал ЛЧ 2026 — голосование</title>
   <meta name="description" content="Fan poll: кто выиграет финал Лиги чемпионов в Будапеште?" />
+  <link rel="preload" as="image" href="assets/arsenal-800.jpg" media="(max-width: 839px)" />
+  <link rel="preload" as="image" href="assets/arsenal-1280.jpg" media="(min-width: 840px)" />
   <style>
     :root {
       --arsenal: #EF0107;
@@ -409,7 +411,17 @@
         aria-label="Голосовать за Arsenal" aria-pressed="false">
         <span class="hero-art__frame">
           <span class="side-label arsenal">Arsenal</span>
-          <img class="img-full" src="assets/arsenal.png" alt="" width="1536" height="1024" />
+          <img
+            class="img-full"
+            src="assets/arsenal-1280.jpg"
+            srcset="assets/arsenal-800.jpg 800w, assets/arsenal-1280.jpg 1280w"
+            sizes="(max-width: 839px) 100vw, 50vw"
+            alt=""
+            width="1280"
+            height="853"
+            decoding="async"
+            fetchpriority="high"
+          />
           <span class="hero-art__shine" aria-hidden="true"></span>
           <span class="hero-art__ring" aria-hidden="true"></span>
           <span class="hero-art__check" aria-hidden="true">✓</span>
@@ -422,7 +434,17 @@
         aria-label="Голосовать за Paris SG" aria-pressed="false">
         <span class="hero-art__frame">
           <span class="side-label psg">Paris SG</span>
-          <img class="img-full" src="assets/psg.png" alt="" width="1536" height="1024" />
+          <img
+            class="img-full"
+            src="assets/psg-1280.jpg"
+            srcset="assets/psg-800.jpg 800w, assets/psg-1280.jpg 1280w"
+            sizes="(max-width: 839px) 100vw, 50vw"
+            alt=""
+            width="1280"
+            height="853"
+            decoding="async"
+            loading="lazy"
+          />
           <span class="hero-art__shine" aria-hidden="true"></span>
           <span class="hero-art__ring" aria-hidden="true"></span>
           <span class="hero-art__check" aria-hidden="true">✓</span>
