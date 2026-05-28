@@ -7,6 +7,7 @@
   <meta name="description" content="Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal in the Champions League final. Vote now — instant results." />
   <meta name="keywords" content="Arsenal vs PSG, PSG vs Arsenal, Champions League final 2026, UCL final, Budapest, Puskás Aréna, fan poll, prediction, semi-final rematch" />
   <link rel="canonical" href="https://pashavleon.github.io/vote/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://pashavleon.github.io/vote/sitemap.xml" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="UCL Fan Poll" />
   <meta property="og:title" content="Arsenal vs PSG — UCL Final 2026 Fan Poll | Live" />
@@ -19,7 +20,35 @@
   <meta name="twitter:title" content="Arsenal vs PSG — UCL Final 2026 Fan Poll | Live" />
   <meta name="twitter:description" content="Who wins in Budapest? Live fan poll: PSG vs unbeaten Arsenal. Vote now." />
   <meta name="twitter:image" content="https://pashavleon.github.io/vote/assets/arsenal-1280.jpg" />
-  <script type="application/ld+json" id="json-ld"></script>
+  <script type="application/ld+json" id="json-ld">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Arsenal vs PSG — UCL Final 2026 Fan Poll | Live",
+  "description": "Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal in the Champions League final. Vote now — instant results.",
+  "url": "https://pashavleon.github.io/vote/",
+  "inLanguage": "en",
+  "about": {
+    "@type": "SportsEvent",
+    "name": "UEFA Champions League Final 2026",
+    "startDate": "2026-05-30T18:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Puskás Aréna",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Budapest",
+        "addressCountry": "HU"
+      }
+    },
+    "competitor": [
+      { "@type": "SportsTeam", "name": "Arsenal FC" },
+      { "@type": "SportsTeam", "name": "Paris Saint-Germain" }
+    ]
+  }
+}
+  </script>
   <link rel="preload" as="image" href="assets/arsenal-800.jpg" media="(max-width: 839px)" />
   <link rel="preload" as="image" href="assets/arsenal-1280.jpg" media="(min-width: 840px)" />
   <style>
@@ -295,6 +324,18 @@
       padding: 0 1rem 0.75rem;
     }
     .page.has-voted .vote-hint { display: none; }
+    .seo-intro {
+      padding: 0 1rem 0.85rem;
+      max-width: 26rem;
+      margin: 0 auto;
+    }
+    .seo-intro p {
+      margin: 0;
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: var(--muted);
+      text-align: center;
+    }
     .vs-row {
       display: flex;
       align-items: center;
@@ -531,7 +572,7 @@
         background: linear-gradient(180deg, transparent, var(--gold), transparent);
       }
       .vs-badge { width: 56px; height: 56px; font-size: 1.1rem; }
-      .bar-track, .stats, .vote-total, .vote-message, .vote-hint, .share, .footer {
+      .bar-track, .stats, .vote-total, .vote-message, .vote-hint, .seo-intro, .share, .footer {
         max-width: 640px;
         margin-left: auto;
         margin-right: auto;
@@ -557,6 +598,9 @@
       <h1 class="head__title" data-i18n="head.question">Arsenal or PSG — who lifts the trophy?</h1>
     </header>
     <p class="vote-hint" data-i18n="vote.hint">Tap your team's art — your vote counts instantly</p>
+    <div class="seo-intro">
+      <p data-i18n="seo.intro">Live fan poll for the UEFA Champions League final 2026 in Budapest: Arsenal vs Paris Saint-Germain at the Puskás Aréna on 30 May. Defending champions PSG face an Arsenal side unbeaten in this season's Champions League. Tap your team's artwork to vote — results update in real time.</p>
+    </div>
 
     <div class="hero-stack">
       <button type="button" class="hero-art hero-art--arsenal" data-vote-choice="arsenal"

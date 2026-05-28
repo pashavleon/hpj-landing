@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pashavleon.github.io/vote/sitemap.xml
