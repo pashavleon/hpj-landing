@@ -23,30 +23,87 @@
   <script type="application/ld+json" id="json-ld">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Arsenal vs PSG — UCL Final 2026 Fan Poll | Live",
-  "description": "Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal in the Champions League final. Vote now — instant results.",
-  "url": "https://pashavleon.github.io/vote/",
-  "inLanguage": "en",
-  "about": {
-    "@type": "SportsEvent",
-    "name": "UEFA Champions League Final 2026",
-    "startDate": "2026-05-30T18:00:00+02:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": "Puskás Aréna",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Budapest",
-        "addressCountry": "HU"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Arsenal vs PSG — UCL Final 2026 Fan Poll | Live",
+      "description": "Who wins in Budapest? Live fan poll: defending champions PSG vs unbeaten Arsenal in the Champions League final. Vote now — instant results.",
+      "url": "https://pashavleon.github.io/vote/",
+      "inLanguage": "en",
+      "about": {
+        "@type": "SportsEvent",
+        "name": "UEFA Champions League Final 2026",
+        "startDate": "2026-05-30T18:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Puskás Aréna",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Budapest",
+            "addressCountry": "HU"
+          }
+        },
+        "competitor": [
+          { "@type": "SportsTeam", "name": "Arsenal FC" },
+          { "@type": "SportsTeam", "name": "Paris Saint-Germain" }
+        ]
       }
     },
-    "competitor": [
-      { "@type": "SportsTeam", "name": "Arsenal FC" },
-      { "@type": "SportsTeam", "name": "Paris Saint-Germain" }
-    ]
-  }
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When is the UCL final 2026 Arsenal vs PSG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Saturday, 30 May 2026. Kick-off is at 18:00 CET (19:00 Moscow / Minsk time) at the Puskás Aréna in Budapest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the Champions League final 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At the Puskás Aréna in Budapest, Hungary — the venue of the 2025/26 UEFA Champions League final."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is playing in the UCL final 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Arsenal FC and Paris Saint-Germain. PSG are defending champions; Arsenal are chasing their first European Cup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this fan poll work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tap the Arsenal or PSG artwork on this page. Your vote is counted instantly and live percentages update for all visitors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I vote more than once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. One vote per browser is stored locally and verified on the server to keep the fan poll fair."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this an official UEFA poll?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This is an unofficial fan poll for entertainment and is not affiliated with UEFA or either club."
+          }
+        }
+      ]
+    }
+  ]
 }
   </script>
   <link rel="preload" as="image" href="assets/arsenal-800.jpg" media="(max-width: 839px)" />
@@ -493,6 +550,49 @@
       color: var(--gold);
     }
     .share__feedback[hidden] { display: none; }
+    .faq {
+      margin: 0 1rem 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #2a3548;
+    }
+    .faq__title {
+      font-size: 0.72rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 0.65rem;
+      font-weight: 600;
+    }
+    .faq__item {
+      border-top: 1px solid #2a3548;
+    }
+    .faq__item:first-of-type { border-top: none; }
+    .faq__item summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.65rem 0;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .faq__item summary::-webkit-details-marker { display: none; }
+    .faq__item summary::after {
+      content: "+";
+      float: right;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .faq__item[open] summary::after { content: "−"; }
+    .faq__item p {
+      margin: 0 0 0.75rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
     .footer {
       text-align: center;
       font-size: 0.7rem;
@@ -572,7 +672,7 @@
         background: linear-gradient(180deg, transparent, var(--gold), transparent);
       }
       .vs-badge { width: 56px; height: 56px; font-size: 1.1rem; }
-      .bar-track, .stats, .vote-total, .vote-message, .vote-hint, .seo-intro, .share, .footer {
+      .bar-track, .stats, .vote-total, .vote-message, .vote-hint, .seo-intro, .faq, .share, .footer {
         max-width: 640px;
         margin-left: auto;
         margin-right: auto;
@@ -659,6 +759,34 @@
     </div>
     <p class="vote-total" data-vote-total>… голосов · обновляется live</p>
     <p class="vote-message" data-vote-message hidden></p>
+
+    <section class="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="faq__title" data-i18n="faq.title">FAQ — UCL Final 2026</h2>
+      <details class="faq__item">
+        <summary data-i18n="faq.q1">When is the UCL final 2026 Arsenal vs PSG?</summary>
+        <p data-i18n="faq.a1">Saturday, 30 May 2026. Kick-off is at 18:00 CET (19:00 Moscow / Minsk time) at the Puskás Aréna in Budapest.</p>
+      </details>
+      <details class="faq__item">
+        <summary data-i18n="faq.q2">Where is the Champions League final 2026?</summary>
+        <p data-i18n="faq.a2">At the Puskás Aréna in Budapest, Hungary — the venue of the 2025/26 UEFA Champions League final.</p>
+      </details>
+      <details class="faq__item">
+        <summary data-i18n="faq.q3">Who is playing in the UCL final 2026?</summary>
+        <p data-i18n="faq.a3">Arsenal FC and Paris Saint-Germain. PSG are defending champions; Arsenal are chasing their first European Cup.</p>
+      </details>
+      <details class="faq__item">
+        <summary data-i18n="faq.q4">How does this fan poll work?</summary>
+        <p data-i18n="faq.a4">Tap the Arsenal or PSG artwork on this page. Your vote is counted instantly and live percentages update for all visitors.</p>
+      </details>
+      <details class="faq__item">
+        <summary data-i18n="faq.q5">Can I vote more than once?</summary>
+        <p data-i18n="faq.a5">No. One vote per browser is stored locally and verified on the server to keep the fan poll fair.</p>
+      </details>
+      <details class="faq__item">
+        <summary data-i18n="faq.q6">Is this an official UEFA poll?</summary>
+        <p data-i18n="faq.a6">No. This is an unofficial fan poll for entertainment and is not affiliated with UEFA or either club.</p>
+      </details>
+    </section>
 
     <section class="share" data-share-root aria-labelledby="share-heading">
       <h2 id="share-heading" class="share__label" data-i18n="share.label">Share this poll</h2>
